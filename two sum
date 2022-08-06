@@ -1,0 +1,12 @@
+array=[2,7,11,15]
+target=9
+res=[]
+def two_sum(array,target):
+    for i in range(len(array)-1):
+        if array[i]+array[i+1] == target:
+            res.append(i)
+            res.append(i+1)
+            return res
+
+two_sum(array,target)
+print(res)
