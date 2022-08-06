@@ -1,0 +1,47 @@
+# the below function will check the given strings are anagram or not
+# Time complexity is O(nlogn)
+input1="cat"
+input2="tac"
+input1=sorted(input1)
+input2=sorted(input2)
+
+def check_anagram(input1,input2):
+    if len(input1)!=len(input2):
+        return False
+    else:
+        for i in range(len(input1)):
+            if(input1[i]!=input2[i]):
+                return False
+    return True
+    
+result= check_anagram(input1,input2)
+print(result)
+
+
+# Time complexity is O(n) for below program
+input1="cat"
+input2="tace"
+
+inp1={}
+inp2={}
+
+def check_anagram(input1,input2):
+    if len(input1)!=len(input2):
+        return False
+    else:
+        for i in range(len(input1)):
+            if i in inp1.keys():
+                inp1[1]+=1
+            else:
+                inp1[1]=1
+            
+            if i in inp2.keys():
+                inp2[1]+=1
+            else:
+                inp2[1]=1
+    return inp1==inp2
+                
+    
+result= check_anagram(input1,input2)
+print(result)
+    
