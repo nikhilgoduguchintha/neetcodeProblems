@@ -1,3 +1,6 @@
+#the below function will takes a list as a parameter and return bool as output
+# this function checks if the given output has duplicates or not
+
 list1=[1,1,2,3,4]
 def contains_duplicate(list1) -> bool:
     if(len(list1)!=len(set(list1))):
