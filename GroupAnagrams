@@ -1,0 +1,48 @@
+from collections import defaultdict
+Input=["eat","tea","tan","ate","nat","bat"]
+
+def group_anagrams(Input):
+    res=defaultdict(list)
+    for s in Input:
+        count=[0]*26
+        for c in s:
+            count[ord(c)-ord('a')]+=1
+        res[tuple(count)].append(s)
+    return res.values()
+r=group_anagrams(Input)
+print(r)
+
+#onther way
+from collections import defaultdict
+
+Input=["eat","tea","tan","ate","nat","bat"]
+
+def ga(Input):
+    out=defaultdict(list)
+    for s in Input:
+        key="".join(sorted(list(s)))
+        out[key].append(s)
+    outl=[]
+    for i in out.values():
+        outl.append(i)
+    return outl
+res=ga(Input)
+print(res)
+
+# Alternate way: changes made in adding values to keys on out dict
+
+# def ga(Input):
+#     out=defaultdict(list)
+#     for s in Input:
+#         key="".join(sorted(list(s)))
+#         if(out[key]):
+#             out[key].append(s)
+#         else:
+#             out[key]=[s]
+#     outl=[]
+#     for i in out.values():
+#         outl.append(i)
+#     return outl
+# res=ga(Input)
+# print(res)
+
