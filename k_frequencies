@@ -1,0 +1,18 @@
+arr=[1,1,1,2,2,3]
+k=2
+def K_frequencies(arr):
+    count={}
+    freq=[[] for i in range(len(arr)+1)] # freq array initializing with empty arrays wrt the length of arr
+    
+    for i in arr:
+        count[i]=1+count.get(i,0) # adding frequncy of elements with element as key. we adding 1 as value to the key with current value(if we have no such key we initialize with 0). 
+    for n,c in count.items():
+        freq[c].append(n) # here c is frequency and n is element.
+    res=[] 
+    for i in range(len(freq)-1,0,-1):
+        for n in freq[i]:
+            res.append(n)
+            if len(res)==k:
+                return res
+    
+print(K_frequencies(arr))
